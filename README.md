@@ -164,9 +164,8 @@ This project is licensed under the MIT License.
 
 ---
 
-Feel free to customize this README file further to suit your specific project needs. If you have any more questions or need additional assistance, feel free to ask!
 
-Source: Conversation with Copilot, 8/19/2024
+
 (1) im-bravo/payload-cms: Built with React - GitHub. https://github.com/im-bravo/payload-cms.
 (2) GitHub - nawok/payloadcms__payload: The React + TypeScript CMS. Payload .... https://github.com/nawok/payloadcms__payload.
 (3) Using Payload CMS to build a blog - LogRocket Blog. https://blog.logrocket.com/using-payload-cms-build-blog/.
