@@ -1,0 +1,26 @@
+
+Martian-Cadet-platform/
+├── backend/
+│   ├── config/
+│   │   └── payload.config.js
+│   ├── controllers/
+│   │   ├── interactionsController.js
+│   │   └── crowdfundingController.js
+│   ├── models/
+│   │   └── interaction.js
+│   ├── routes/
+│   │   ├── interactions.js
+│   │   └── crowdfunding.js
+│   ├── tests/
+│   │   ├── interactions.test.js
+│   │   └── crowdfunding.test.js
+│   ├── app.js
+│   └── server.js
+├── contracts/
+│   ├── NftContract.rs
+│   └── CrowdfundContract.rs
+├── frontend/
+│   ├── index.html
+│   ├── main.css
+│   └── scripts.js
+└── README.md

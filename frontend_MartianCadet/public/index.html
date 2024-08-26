@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Martian Cadet Platform</title>
+  <link rel="stylesheet" href="main.css">
+</head>
+<body>
+  <header>
+    <h1>Space Exploration Platform</h1>
+    <nav>
+      <a href="#blogs">Blogs</a>
+      <a href="#lms">LMS</a>
+      <a href="#nfts">NFTs</a>
+      <a href="#smart-contracts">Smart Contracts</a>
+      <a href="#crowdfunding">Crowdfunding</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <section id="blogs" class="card">
+      <h2>Blogs</h2>
+      <p>Explore our latest blogs on space exploration.</p>
+      <button class="button" onclick="recordInteraction('blog')">Read More</button>
+    </section>
+
+    <section id="lms" class="card">
+      <h2>LMS</h2>
+      <p>Learn about space through our Learning Management System.</p>
+      <button class="button" onclick="recordInteraction('lms')">Start Learning</button>
+    </section>
+
+    <section id="nfts" class="card">
+      <h2>NFTs</h2>
+      <p>Discover and trade space-themed NFTs.</p>
+      <button class="button" onclick="recordInteraction('nft')">Explore NFTs</button>
+    </section>
+
+    <section id="smart-contracts" class="card">
+      <h2>Smart Contracts</h2>
+      <p>Interact with Soroban smart contracts.</p>
+      <button class="button" onclick="recordInteraction('smart-contract')">Interact Now</button>
+    </section>
+
+    <section id="crowdfunding" class="card">
+      <h2>Crowdfunding</h2>
+      <p>Support space exploration projects through crowdfunding.</p>
+      <button class="button" onclick="createCampaign()">Create Campaign</button>
+      <button class="button" onclick="contributeToCampaign()">Contribute</button>
+      <button class="button" onclick="withdrawFunds()">Withdraw Funds</button>
+    </section>
+  </div>
+
+  <script>
+    function recordInteraction(type) {
+      fetch('/api/interactions', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ user: 'user123', interactionType: type }),
+      })
+      .then(response => response.json())
+      .then(data => {
+        console.log('Success:', data);
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+      });
+    }
+
+    function createCampaign() {
+      fetch('/api/crowdfunding/create', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ creator: 'user123', goal: 1000 }),
+      })
+      .then(response => response.json())
+      .then(data => {
+        console.log('Campaign Created:', data);
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+      });
+    }
+
+    function contributeToCampaign() {
+      fetch('/api/crowdfunding/contribute', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ campaignId: 'campaign123', contributor: 'user123', amount: 100 }),
+      })
+      .then(response => response.json())
+      .then(data => {
+        console.log('Contribution Received:', data);
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+      });
+    }
+
+    function withdrawFunds() {
+      fetch('/api/crowdfunding/withdraw', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ campaignId: 'campaign123', creator: 'user123' }),
+      })
+      .then(response => response.json())
+      .then(data => {
+        console.log('Funds Withdrawn:', data);
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+      });
+    }
+  </script>
+</body>
+</html>
