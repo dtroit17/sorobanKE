@@ -3,6 +3,9 @@
  integrating Payload CMS, Soroban smart contracts, React, NFT generation, personalized content interaction, and crowdfunding functionalities.
 
 ![alt text](<martian cadet.PNG>)
+
+Project Documentation
+https://www.canva.com/design/DAF7YdoWM9c/eGIosx05c3mKSiAUCX_uKA/view?utm_content=DAF7YdoWM9c&utm_campaign=designshare&utm_medium=link&utm_source=editor
 ---
 
 # My Blog Platform
