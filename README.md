@@ -1,7 +1,8 @@
 # sorobanKE
-
+# Martian Cadet Platform
  integrating Payload CMS, Soroban smart contracts, React, NFT generation, personalized content interaction, and crowdfunding functionalities.
 
+![alt text](<martian cadet.PNG>)
 ---
 
 # My Blog Platform
