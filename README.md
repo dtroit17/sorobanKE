@@ -22,6 +22,16 @@ This platform is built using Payload CMS, Soroban smart contracts, and React. It
 
 ## Installation
 
+Getting Started
+
+To get started with this project, you can launch it directly in a cloud development environment using Gitpod. This allows you to avoid any local setup and start coding immediately.
+
+Launch in Gitpod
+Click the link below to open this project in Gitpod:
+
+https://dtroit17-sorobanke-ztd58ztwkz8.ws-eu115.gitpod.io/
+
+
 ### Prerequisites
 
 - Node.js
