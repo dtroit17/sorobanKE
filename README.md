@@ -1,6 +1,6 @@
 # sorobanKE
 
-Here's a comprehensive README file for your platform, integrating Payload CMS, Soroban smart contracts, React, NFT generation, personalized content interaction, and crowdfunding functionalities.
+ integrating Payload CMS, Soroban smart contracts, React, NFT generation, personalized content interaction, and crowdfunding functionalities.
 
 ---
 

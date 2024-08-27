@@ -1,0 +1,60 @@
+image:
+  file: .gitpod.Dockerfile
+
+tasks:
+  - init: npm install
+    command: npm start
+
+ports:
+  - port: 3000
+    onOpen: open-preview
+  - port: 8000
+    onOpen: open-preview
+
+vscode:
+  extensions:
+    - dbaeumer.vscode-eslint
+    - esbenp.prettier-vscode
+    - rust-lang.rust-analyzer
+
+# Prebuilds
+github:
+  prebuilds:
+    master: true
+    branches: true
+    pullRequests: true
+
+# Environment Variables
+env:
+  NODE_ENV: development
+
+# Initialize Payload CMS
+tasks:
+  - init: |
+      cd backend
+      npm install
+      npm run dev
+    command: |
+      cd backend
+      npm start
+
+# Initialize Soroban Smart Contracts
+tasks:
+  - init: |
+      cd contracts
+      rustup default stable
+      rustup update
+      rustup target add wasm32-unknown-unknown
+      cargo build --target wasm32-unknown-unknown --release
+    command: |
+      cd contracts
+      cargo test
+
+# Initialize React Frontend
+tasks:
+  - init: |
+      cd frontend
+      npm install
+    command: |
+      cd frontend
+      npm start
