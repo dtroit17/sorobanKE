@@ -4,7 +4,6 @@ image:
 tasks:
   - init: npm install
     command: npm start
-
   - init: |
       cd backend
       npm install
@@ -12,7 +11,6 @@ tasks:
     command: |
       cd backend
       npm start
-
   - init: |
       cd contracts
       rustup default stable
@@ -22,7 +20,6 @@ tasks:
     command: |
       cd contracts
       cargo test
-
   - init: |
       cd frontend
       npm install
@@ -36,17 +33,19 @@ ports:
   - port: 8000
     onOpen: open-preview
 
-vscode:
-  extensions:
-    - dbaeumer.vscode-eslint
-    - esbenp.prettier-vscode
-    - rust-lang.rust-analyzer
-
 github:
   prebuilds:
     master: true
     branches: true
     pullRequests: true
 
-env:
-  NODE_ENV: development
+# Remove the vscode section as it's not a valid property in gitpod.yml
+# vscode:
+#   extensions:
+#     - dbaeumer.vscode-eslint
+#     - esbenp.prettier-vscode
+#     - rust-lang.rust-analyzer
+
+# Remove the env section as it's not a valid property in gitpod.yml
+# env:
+#   NODE_ENV: development
