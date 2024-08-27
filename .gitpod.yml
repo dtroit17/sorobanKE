@@ -1,35 +1,14 @@
+# Specify the Docker image to use for the Gitpod environment
 image:
   file: .gitpod.Dockerfile
 
+# Define the tasks to run in the Gitpod environment
 tasks:
+  # Initial task to install npm packages and start the main application
   - init: npm install
     command: npm start
 
-ports:
-  - port: 3000
-    onOpen: open-preview
-  - port: 8000
-    onOpen: open-preview
-
-vscode:
-  extensions:
-    - dbaeumer.vscode-eslint
-    - esbenp.prettier-vscode
-    - rust-lang.rust-analyzer
-
-# Prebuilds
-github:
-  prebuilds:
-    master: true
-    branches: true
-    pullRequests: true
-
-# Environment Variables
-env:
-  NODE_ENV: development
-
-# Initialize Payload CMS
-tasks:
+  # Task to initialize and start the backend
   - init: |
       cd backend
       npm install
@@ -38,8 +17,7 @@ tasks:
       cd backend
       npm start
 
-# Initialize Soroban Smart Contracts
-tasks:
+  # Task to initialize and build Soroban smart contracts
   - init: |
       cd contracts
       rustup default stable
@@ -50,11 +28,35 @@ tasks:
       cd contracts
       cargo test
 
-# Initialize React Frontend
-tasks:
+  # Task to initialize and start the React frontend
   - init: |
       cd frontend
       npm install
     command: |
       cd frontend
       npm start
+
+# Define the ports to expose and their behavior when opened
+ports:
+  - port: 3000
+    onOpen: open-preview
+  - port: 8000
+    onOpen: open-preview
+
+# Specify VS Code extensions to install in the Gitpod environment
+vscode:
+  extensions:
+    - dbaeumer.vscode-eslint
+    - esbenp.prettier-vscode
+    - rust-lang.rust-analyzer
+
+# Configure prebuilds for GitHub branches and pull requests
+github:
+  prebuilds:
+    master: true
+    branches: true
+    pullRequests: true
+
+# Set environment variables for the Gitpod environment
+env:
+  NODE_ENV: development
